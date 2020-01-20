@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+- name: quickbooks
+  database: raw
+  schema: qbo
+  tables:
+      - name: quickbooks_accounts
+      - name: quickbooks_billpayments
+      - name: quickbooks_bills
+      - name: quickbooks_classes
+      - name: quickbooks_customers
+      - name: quickbooks_deposits
+      - name: quickbooks_employees
+      - name: quickbooks_invoices
+      - name: quickbooks_items
+      - name: quickbooks_journalentries
+      - name: quickbooks_paymentmethods
+      - name: quickbooks_payments
+      - name: quickbooks_purchases
+      - name: quickbooks_transfers
+      - name: quickbooks_vendorcredits
+      - name: quickbooks_vendors
+      
+models:
+  
+- name: stg_qbo__accounts
+  description: ""
+  columns:
+  - name: charge_id
+    tests:
+      - not_null
+      - unique
+
