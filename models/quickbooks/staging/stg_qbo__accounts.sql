@@ -7,7 +7,7 @@ with source as (
 select 
 
     *,
-    null as parentref__value,
+    parentref as parentref__value,
     null as metadata__createtime,
     null as metadata__lastupdatedtime
     

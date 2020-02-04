@@ -6,8 +6,8 @@ with source as (
 
 select 
 
-    *,
-    metadata:CreateTime::date as metadata__createtime,
-    metadata:LastUpdatedTime::date as metadata__lastupdatedtime
+    accountref_value
+    classref_value
+    posting_type
     
 from source
