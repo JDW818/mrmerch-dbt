@@ -17,11 +17,6 @@ clean-targets:
     - "target"
     - "dbt_modules"
 
-quoting:
-  database: true
-  identifier: true
-  schema: true
-
 models:
   transient: true
   
@@ -37,29 +32,25 @@ models:
       materialized: ephemeral
 
     vars:
-      "base.accounts"                     : "raw.qbo.quickbooks_accounts"
-      "base.bills_line"                   : "raw.qbo.quickbooks_bills__line"
-      "base.billpayments"                 : "raw.qbo.quickbooks_billpayments"
-      "base.billpayments_line"            : "raw.qbo.quickbooks_billpayments__line"
-      "base.billpayments_line__linkedtxn" : "raw.qbo.quickbooks_billpayments__line__linkedtxn"
-      "base.bills"                        : "raw.qbo.quickbooks_bills"
-      "base.classes"                      : "raw.qbo.quickbooks_classes"
-      "base.customers"                    : "raw.qbo.quickbooks_customers"
-      "base.deposits_line"                : "raw.qbo.quickbooks_deposits__line"
-      "base.deposits_line_linkedtxn"      : "raw.qbo.quickbooks_deposits__line__linkedtxn"
-      "base.deposits"                     : "raw.qbo.quickbooks_deposits"
-      "base.invoices_lines"               : "raw.qbo.quickbooks_invoices__line"
-      "base.invoices"                     : "raw.qbo.quickbooks_invoices"
-      "base.items"                        : "raw.qbo.quickbooks_items"
-      "base.journal_entries"              : "raw.qbo.quickbooks_journalentries"
-      "base.journal_entries_line"         : "raw.qbo.quickbooks_journalentries__line"
-      "base.payments"                     : "raw.qbo.quickbooks_payments"
-      "base.purchases_line"               : "raw.qbo.quickbooks_purchases__line"
-      "base.purchases"                    : "raw.qbo.quickbooks_purchases"
-      "base.vendors"                      : "raw.qbo.quickbooks_vendors"
+      "base.accounts"                     : "qbo.quickbooks_accounts"
+      "base.bills_line"                   : ""
+      "base.billpayments"                 : "qbo.quickbooks_billpayments"
+      "base.billpayments_line"            : ""
+      "base.billpayments_line__linkedtxn" : ""
+      "base.bills"                        : "qbo.quickbooks_bills"
+      "base.classes"                      : "qbo.quickbooks_classes"
+      "base.customers"                    : "qbo.quickbooks_customers"
+      "base.deposits_line"                : ""
+      "base.deposits_line_linkedtxn"      : ""
+      "base.deposits"                     : "qbo.quickbooks_deposits"
+      "base.invoices_lines"               : ""
+      "base.invoices"                     : "qbo.quickbooks_invoices"
+      "base.items"                        : "qbo.quickbooks_items"
+      "base.journal_entries"              : "qbo.quickbooks_journalentries"
+      "base.journal_entries_line"         : ""
+      "base.payments"                     : "qbo.quickbooks_payments"
+      "base.purchases_line"               : ""
+      "base.purchases"                    : "qbo.quickbooks_purchases"
+      "base.vendors"                      : "qbo.quickbooks_vendors"
       "level_0_id_field"                  : "_sdc_level_0_id"
       "source_key_id_field"               : "_sdc_source_key_id"
-
-on-run-end:
-  - "{{ grant_select_on_schemas(schemas, 'reporter') }}"
-  - "{{ grant_select_on_schemas(schemas, 'transformer') }}"
