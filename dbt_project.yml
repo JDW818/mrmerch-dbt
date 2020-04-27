@@ -19,38 +19,3 @@ clean-targets:
 
 models:
   transient: true
-  
-  quickbooks:
-    enabled: true
-    materialized: view
-    tables:
-      materialized: table
-      quickbooks_general_ledger:
-        dist: id
-        sort: txn_date
-    base:
-      materialized: ephemeral
-
-    vars:
-      "base.accounts"                     : "qbo.quickbooks_accounts"
-      "base.bills_line"                   : ""
-      "base.billpayments"                 : "qbo.quickbooks_billpayments"
-      "base.billpayments_line"            : ""
-      "base.billpayments_line__linkedtxn" : ""
-      "base.bills"                        : "qbo.quickbooks_bills"
-      "base.classes"                      : "qbo.quickbooks_classes"
-      "base.customers"                    : "qbo.quickbooks_customers"
-      "base.deposits_line"                : ""
-      "base.deposits_line_linkedtxn"      : ""
-      "base.deposits"                     : "qbo.quickbooks_deposits"
-      "base.invoices_lines"               : ""
-      "base.invoices"                     : "qbo.quickbooks_invoices"
-      "base.items"                        : "qbo.quickbooks_items"
-      "base.journal_entries"              : "qbo.quickbooks_journalentries"
-      "base.journal_entries_line"         : ""
-      "base.payments"                     : "qbo.quickbooks_payments"
-      "base.purchases_line"               : ""
-      "base.purchases"                    : "qbo.quickbooks_purchases"
-      "base.vendors"                      : "qbo.quickbooks_vendors"
-      "level_0_id_field"                  : "_sdc_level_0_id"
-      "source_key_id_field"               : "_sdc_source_key_id"

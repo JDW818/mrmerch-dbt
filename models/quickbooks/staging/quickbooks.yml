@@ -1,6 +1,19 @@
 version: 2
 
 sources:
-- name: qbo
+- name: quickbooks
   tables:
-      - name: Account
+      - name: account
+      - name: bill_payment
+      - name: bill
+      - name: class
+      - name: customer
+      - name: deposit
+      - name: invoice
+      - name: invoice_line
+      - name: item
+      - name: journal_entry
+      - name: payment
+      - name: purchase
+      - name: vendor
+      
