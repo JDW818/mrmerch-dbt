@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+- name: quickbooks
+  tables:
+      - name: account
+      - name: bill_payment
+      - name: bill
+      - name: class
+      - name: customer
+      - name: deposit
+      - name: invoice
+      - name: invoice_line
+      - name: item
+      - name: journal_entry
+      - name: journal_entry_line
+      - name: payment
+      - name: payment_line
+      - name: purchase
+      - name: purchase_line
+      - name: vendor
