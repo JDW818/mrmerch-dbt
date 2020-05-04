@@ -1,13 +1,15 @@
-with source as (
-    
+with
+
+source as (
+
     select * from {{ source('quickbooks', 'customer') }}
-    
+
 ),
 
 renamed as (
 
     select
-        
+
         id as customer_id,
         ar_account_id,
         currency_id,
@@ -18,7 +20,7 @@ renamed as (
         sales_term_id,
         shipping_address_id,
         tax_exemption_reason_id,
-        
+
         alternate_phone_number,
         balance,
         company_name,
@@ -37,18 +39,32 @@ renamed as (
         preferred_delivery_method,
         resale_number,
         website,
-        
-        active as is_active,
-        taxable as is_taxable,
-        bill_with_parent as is_bill_with_parent,
-        
+
+        case
+          when active = true
+            then 1
+          else 0
+        end as is_active,
+
+        case
+          when taxable = true
+            then 1
+          else 0
+        end as is_taxable,
+
+        case
+          when bill_with_parent = true
+            then 1
+          else 0
+        end as is_bill_with_parent,
+
         open_balance_date,
         created_at,
         updated_at,
-        _fivetran_synced as fivetran_synced_at
-    
+        _fivetran_synced
+
     from source
-    
+
 )
 
 select * from renamed
