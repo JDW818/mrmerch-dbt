@@ -13,7 +13,9 @@ sources:
       - name: invoice_line
       - name: item
       - name: journal_entry
+      - name: journal_entry_line
       - name: payment
+      - name: payment_line
       - name: purchase
+      - name: purchase_line
       - name: vendor
-      
