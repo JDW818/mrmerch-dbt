@@ -8,7 +8,7 @@ renamed as (
 
     select
         
-        id as bill_payment_id,
+        id,
         vendor_id,
         check_bank_account_id,
         credit_card_account_id,
