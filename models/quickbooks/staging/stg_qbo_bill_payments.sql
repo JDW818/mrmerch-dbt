@@ -1,9 +1,7 @@
-with
-
-source as (
-
+with source as (
+    
     select * from {{ source('quickbooks', 'bill_payment') }}
-
+    
 ),
 
 renamed as (
@@ -17,7 +15,7 @@ renamed as (
         currency_id,
         department_id,
         payable_account_id,
-
+        
         check_print_status,
         doc_number,
         exchange_rate,
@@ -25,7 +23,7 @@ renamed as (
         private_note as memo,
         process_bill_payment,
         total_amount,
-
+        
         transaction_date,
         created_at,
         updated_at,
@@ -33,8 +31,7 @@ renamed as (
         _fivetran_deleted
             
     from source
-
+    
 )
 
 select * from renamed
-where is_deleted = 0
