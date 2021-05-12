@@ -27,7 +27,7 @@ renamed as (
         transaction_date,
         created_at,
         updated_at,
-        _fivetran_synced as fivetran_synced_at,
+        _fivetran_synced,
         _fivetran_deleted
             
     from source
