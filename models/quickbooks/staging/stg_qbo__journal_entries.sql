@@ -16,7 +16,7 @@ renamed as (
       private_note,
 
       total_amount,
-      total_tax,
+      total_tax as tax_amount,
 
       case
         when adjustment = true
